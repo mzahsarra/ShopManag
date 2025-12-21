@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAppContext, useToastContext } from '../context';
 import { CategoryService } from '../services';
-import { MinimalCategory, ObjectPropertyString } from '../types';
+import type { MinimalCategory, ObjectPropertyString } from '../types';
 
 const schema = (category: MinimalCategory) => ({
     name: category.name ? '' : 'Ce champ est requis',

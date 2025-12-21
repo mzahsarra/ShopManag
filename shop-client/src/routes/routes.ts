@@ -9,6 +9,7 @@ import {
     ShopForm,
 } from '../pages';
 import CategoryForm from '../pages/CategoryForm';
+import type {JSX} from "react";
 
 type Routes = {
     name: string;

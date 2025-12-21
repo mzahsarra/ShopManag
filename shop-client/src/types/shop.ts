@@ -1,4 +1,4 @@
-import OpeningHours from './openingHours';
+import type {OpeningHours} from './openingHours';
 
 export type Shop = {
     id: number;
@@ -7,6 +7,7 @@ export type Shop = {
     inVacations: boolean;
     openingHours: OpeningHours[];
     nbProducts: number;
+    nbCategories: number;
 };
 
 export type MinimalShop = {

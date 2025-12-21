@@ -5,8 +5,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { SelectPaginate } from '../components';
 import { useAppContext, useToastContext } from '../context';
 import { CategoryService, ProductService, ShopService } from '../services';
-import { MinimalProduct } from '../types';
-import Locale from '../types/locale';
+import type { MinimalProduct } from '../types';
+import {Locale} from '../types/locale';
 import { formatterProductForm, getLocalizedProduct } from '../utils';
 
 const schema = (product: MinimalProduct) => ({

@@ -9,6 +9,7 @@ import ShopProducts from './ShopProducts';
 import ShopCard from './ShopCard';
 import SwitchLanguage from './SwitchLanguage';
 import Toaster from './Toaster';
+import SearchBar from "./SearchBar.tsx";
 
 export {
     ActionButtons,
@@ -22,4 +23,5 @@ export {
     ShopCard,
     SwitchLanguage,
     Toaster,
+    SearchBar,
 };

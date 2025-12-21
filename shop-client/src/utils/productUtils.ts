@@ -1,6 +1,6 @@
-import { MinimalLocalizedProduct, MinimalProduct, Product } from '../types/product';
-import { LocalizedProduct } from '../types';
-import Language from '../types/locale';
+import type {MinimalLocalizedProduct, MinimalProduct, Product} from '../types/product';
+import type {LocalizedProduct} from '../types';
+import {Locale as Language} from '../types/locale';
 
 /**
  *

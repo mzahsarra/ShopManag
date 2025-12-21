@@ -4,93 +4,168 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e83f50f4-db6c-491f-ad35-c973669feec0" name="Default Changelist" comment="" />
+    <list default="true" id="2353da60-4fb0-4e70-9aaf-391a03e64826" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/CI.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/google-java-format.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prettierrc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CategoryCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CategoryCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Filters.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filters.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProductCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProductCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SelectPaginate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SelectPaginate.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ShopCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ShopCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ShopProducts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ShopProducts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SwitchLanguage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SwitchLanguage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Toaster.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Toaster.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/AppProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/AppProvider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/ToastProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/ToastProvider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Categories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Categories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/CategoryDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CategoryDetails.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/CategoryForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CategoryForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ProductDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProductDetails.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ProductForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProductForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Products.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Products.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ShopDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ShopDetails.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ShopForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ShopForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app-env.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/CategoryService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/CategoryService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/ProductService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ProductService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/ShopService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ShopService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/locale.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/locale.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/openingHours.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/openingHours.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/product.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/product.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/shop.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/shop.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/toast.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/toast.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/productUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/productUtils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/model/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/model/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/ShopAppApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/ShopAppApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/config/ElasticsearchIndexInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/config/ElasticsearchIndexInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/config/WebSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/controller/CategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/controller/CategoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/controller/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/controller/ProductController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/controller/ShopController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/controller/ShopController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/exception/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/exception/GlobalExceptionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/model/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/model/Category.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/model/Locale.class" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/model/Locale.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/model/LocalizedProduct.class" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/model/LocalizedProduct.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/model/OpeningHoursShop.class" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/model/OpeningHoursShop.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/model/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/model/Shop.class" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/model/Shop.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/repository/CategoryRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/repository/CategoryRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/repository/ProductRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/repository/ProductRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/repository/ShopRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/repository/ShopRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/service/CategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/service/CategoryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/service/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/service/ProductService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/service/ShopService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/service/ShopService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/util/ErrorValidation.class" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/util/ErrorValidation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/validation/StringEnumeration.class" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/validation/StringEnumeration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/validation/StringEnumerationValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/validation/StringEnumerationValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/target/shop-app-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/target/shop-app-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/target/shop-app-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/target/shop-app-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CodeStyleSettingsInfer">
-    <option name="done" value="true" />
-  </component>
-  <component name="ComposerSettings">
-    <execution />
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="71" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="threads" value="1C" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php" />
-  <component name="ProjectCodeStyleSettingsMigration">
-    <option name="version" value="2" />
-  </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 7
-}]]></component>
-  <component name="ProjectId" id="2VWs9zWiFOjlUkuWUkQJadkLjcR" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="373rPQwDk4oTzGcQRvrVewaGNnO" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/gleroy/Documents/[Perso]/UE_FullStack/TP3/shop-client",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "main",
+    "javascript.preferred.runtime.type.id": "node",
+    "last_opened_file_path": "/home/clayton/Documents/M2/Fullstack/shop-manag/shop-client",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/home/clayton/Documents/M2/Fullstack/shop-manag/shop-client/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
+  <component name="RecapSpentCounter">
+    <option name="endsOfQuotaMs" value="1766568629133" />
+    <option name="spentUsd" value="0.26238808" />
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="SvnConfiguration">
-    <configuration />
+  <component name="RecapUselessUpdatesCounter">
+    <option name="suspendCountdown" value="0" />
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.29346.143" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e83f50f4-db6c-491f-ad35-c973669feec0" name="Default Changelist" comment="" />
-      <created>1694963023016</created>
+      <changelist id="2353da60-4fb0-4e70-9aaf-391a03e64826" name="Changes" comment="" />
+      <created>1766142570894</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1694963023016</updated>
-      <workItem from="1694963024890" duration="1221000" />
-      <workItem from="1695107545542" duration="604000" />
-      <workItem from="1701021903838" duration="1119000" />
+      <updated>1766142570894</updated>
+      <workItem from="1766142572099" duration="16019000" />
+      <workItem from="1766223564449" duration="2720000" />
+      <workItem from="1766245937750" duration="13592000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="2663" y="284" width="424" height="481" key="FileChooserDialogImpl" timestamp="1695114330140">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2663" y="284" width="424" height="481" key="FileChooserDialogImpl/1920.0.1920.1080/0.0.1920.1054@1920.0.1920.1080" timestamp="1695114330140" />
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
   </component>
 </project>

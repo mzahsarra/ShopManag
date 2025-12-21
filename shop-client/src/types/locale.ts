@@ -1,6 +1,6 @@
-enum Locale {
-    FR = 'FR',
-    EN = 'EN',
-}
+export const Locale = {
+    FR: 'FR',
+    EN: 'EN'
+} as const
 
-export default Locale;
+export type Locale = (typeof Locale)[keyof typeof Locale]

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAppContext, useToastContext } from '../context';
 import { CategoryService } from '../services';
-import { Category } from '../types';
+import type { Category } from '../types';
 import { ActionButtons } from '../components';
 
 const CategoryDetails = () => {

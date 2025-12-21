@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ActionButtons, ShopProducts } from '../components';
 import { ShopService } from '../services';
-import { Shop } from '../types';
+import type { Shop } from '../types';
 import { useAppContext, useToastContext } from '../context';
 import { pluralize } from '../utils';
 

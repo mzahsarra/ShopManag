@@ -1,6 +1,6 @@
 import { CategoryService, ProductService } from '../services';
 import { useEffect, useState } from 'react';
-import { Category, Product, ResponseArray } from '../types';
+import type { Category, Product, ResponseArray } from '../types';
 import { Box, FormControl, Grid, Pagination, Typography } from '@mui/material';
 import ProductCard from './ProductCard';
 import { useAppContext } from '../context';
@@ -41,7 +41,7 @@ const ShopProducts = ({ shopId }: Props) => {
         getProducts();
     }, [shopId, pageSelected, filter]);
 
-    const handleChangePagination = (event: React.ChangeEvent<unknown>, value: number) => {
+    const handleChangePagination = (_event: React.ChangeEvent<unknown>, value: number) => {
         setPageSelected(value - 1);
     };
 
@@ -69,7 +69,7 @@ const ShopProducts = ({ shopId }: Props) => {
 
             <Grid container alignItems="center" rowSpacing={3} columnSpacing={3}>
                 {products?.map((product) => (
-                    <Grid item key={product.id} xs={4}>
+                    <Grid key={product.id} size={4}>
                         <ProductCard product={product} />
                     </Grid>
                 ))}

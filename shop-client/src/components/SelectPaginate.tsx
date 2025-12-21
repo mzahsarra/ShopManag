@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import { AsyncPaginate } from 'react-select-async-paginate';
-import { components, StylesConfig } from 'react-select';
-import { ResponseArray } from '../types';
+import { components, type StylesConfig } from 'react-select';
+import { type ResponseArray } from '../types';
 
 type Props = {
     value: any;
@@ -56,7 +56,7 @@ const CustomValueContainer = ({ children, ...props }: any) => {
 };
 
 const SelectPaginate = ({ value, onChange, placeholder, refetch, isMulti = false, defaultLabel }: Props) => {
-    const loadOptions = async (searchQuery: string, options: unknown, { page }: any) => {
+    const loadOptions = async (_searchQuery: string, _options: unknown, { page }: any) => {
         const response = await refetch(page, 10);
         return {
             options:

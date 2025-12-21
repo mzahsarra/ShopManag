@@ -1,5 +1,5 @@
-import { Category } from './category';
-import { Shop } from './shop';
+import type {Category} from './category';
+import type {Shop} from './shop';
 
 type LocalizedProductBase = {
     locale: string;

@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { CategoryCard } from '../components';
 import { useAppContext } from '../context';
 import { CategoryService } from '../services';
-import { Category } from '../types';
+import type { Category } from '../types';
 
 const Categories = () => {
     const navigate = useNavigate();
@@ -30,7 +30,7 @@ const Categories = () => {
         getCategories();
     }, [pageSelected]);
 
-    const handleChangePagination = (event: React.ChangeEvent<unknown>, value: number) => {
+    const handleChangePagination = (_event: React.ChangeEvent<unknown>, value: number) => {
         setPageSelected(value - 1);
     };
 
@@ -55,7 +55,7 @@ const Categories = () => {
             {/* Categories */}
             <Grid container alignItems="center" rowSpacing={3} columnSpacing={3}>
                 {categories?.map((category) => (
-                    <Grid item key={category.id} xs={4}>
+                    <Grid key={category.id} size={4}>
                         <CategoryCard category={category} />
                     </Grid>
                 ))}

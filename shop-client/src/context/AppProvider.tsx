@@ -1,5 +1,5 @@
-import { createContext, useContext, useState } from 'react';
-import Locale from '../types/locale';
+import {createContext, type JSX, useContext, useState} from 'react';
+import {Locale} from '../types/locale';
 
 interface AppContextInterface {
     loading: boolean;

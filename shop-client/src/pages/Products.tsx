@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { ProductCard } from '../components';
 import { useAppContext } from '../context';
 import { ProductService } from '../services';
-import { Product } from '../types';
+import type { Product } from '../types';
 
 const Products = () => {
     const navigate = useNavigate();
@@ -30,7 +30,7 @@ const Products = () => {
         getProducts();
     }, [pageSelected]);
 
-    const handleChangePagination = (event: React.ChangeEvent<unknown>, value: number) => {
+    const handleChangePagination = (_event: React.ChangeEvent<unknown>, value: number) => {
         setPageSelected(value - 1);
     };
 
@@ -55,12 +55,11 @@ const Products = () => {
             {/* Products */}
             <Grid container alignItems="center" rowSpacing={3} columnSpacing={3}>
                 {products?.map((product) => (
-                    <Grid item key={product.id} xs={4}>
-                        <ProductCard product={product} displayShop={true} />
+                    <Grid key={product.id} size={4}>
+                        <ProductCard product={product} displayShop />
                     </Grid>
                 ))}
             </Grid>
-
             {/* Pagination */}
             {products?.length !== 0 ? (
                 <Pagination count={count} page={page} siblingCount={1} onChange={handleChangePagination} />

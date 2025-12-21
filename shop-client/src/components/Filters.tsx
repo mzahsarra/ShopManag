@@ -7,14 +7,13 @@ import {
     FormControl,
     InputLabel,
     MenuItem,
-    Select,
-    TextField,
+    Select
 } from '@mui/material';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { Dayjs } from 'dayjs';
-import { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import {type Dispatch, type SetStateAction, useEffect, useState } from 'react';
 
 type FiltersType = {
     inVacations: string;
@@ -109,13 +108,19 @@ const Filters = ({ setUrlFilters, setSort, sort }: Props) => {
 
                 <DialogContent>
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
-                        <DesktopDatePicker
-                            label="Créée après"
-                            inputFormat="DD/MM/YYYY"
-                            value={filters.createdAfter}
-                            onChange={(v: Dayjs | null) => handleChange('createdAfter', v)}
-                            renderInput={(params) => <TextField {...params} />}
-                        />
+                            <DesktopDatePicker
+                                label="Créée après"
+                                format="DD/MM/YYYY"
+                                value={filters.createdAfter}
+                                onChange={(v) => handleChange('createdAfter', v)}
+                                slotProps={{
+                                    textField: {
+                                        variant: 'outlined',
+                                        size: 'small',
+                                        fullWidth: true
+                                    }
+                                }}
+                            />
                     </LocalizationProvider>
                 </DialogContent>
 
@@ -123,10 +128,16 @@ const Filters = ({ setUrlFilters, setSort, sort }: Props) => {
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
                         <DesktopDatePicker
                             label="Créée avant"
-                            inputFormat="DD/MM/YYYY"
+                            format="DD/MM/YYYY"
                             value={filters.createdBefore}
-                            onChange={(v: Dayjs | null) => handleChange('createdBefore', v)}
-                            renderInput={(params) => <TextField {...params} />}
+                            onChange={(v) => handleChange('createdAfter', v)}
+                            slotProps={{
+                                textField: {
+                                    variant: 'outlined',
+                                    size: 'small',
+                                    fullWidth: true
+                                }
+                            }}
                         />
                     </LocalizationProvider>
                 </DialogContent>

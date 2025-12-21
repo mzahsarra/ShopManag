@@ -7,16 +7,16 @@ import {
     MenuItem,
     Pagination,
     Select,
-    SelectChangeEvent,
+    type SelectChangeEvent,
     Typography,
 } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Filters, ShopCard } from '../components';
+import { Filters, ShopCard, SearchBar } from '../components';
 import { useAppContext } from '../context';
 import { ShopService } from '../services';
-import { ResponseArray, Shop } from '../types';
+import type {ResponseArray, Shop} from '../types';
 
 const Home = () => {
     const navigate = useNavigate();
@@ -28,17 +28,24 @@ const Home = () => {
 
     const [sort, setSort] = useState<string>('');
     const [filters, setFilters] = useState<string>('');
+    const [searchQuery, setSearchQuery] = useState<string>('');
 
     const getShops = () => {
         setLoading(true);
         let promisedShops: Promise<ResponseArray<Shop>>;
+
+        const searchParam = searchQuery ? `&name=${encodeURIComponent(searchQuery)}` : '';
+
         if (sort) {
-            promisedShops = ShopService.getShopsSorted(pageSelected, 9, sort);
+            promisedShops = ShopService.getShopsSorted(pageSelected, 9, sort + searchParam);
         } else if (filters) {
-            promisedShops = ShopService.getShopsFiltered(pageSelected, 9, filters);
+            promisedShops = ShopService.getShopsFiltered(pageSelected, 9, filters + searchParam);
+        } else if (searchQuery) {
+            promisedShops = ShopService.getShopsFiltered(pageSelected, 9, searchParam);
         } else {
             promisedShops = ShopService.getShops(pageSelected, 9);
         }
+
         promisedShops
             .then((res) => {
                 setShops(res.data.content);
@@ -49,15 +56,25 @@ const Home = () => {
     };
 
     useEffect(() => {
-        getShops();
-    }, [pageSelected, sort, filters]);
+        // Debounce pour la recherche
+        const timeoutId = setTimeout(() => {
+            getShops();
+        }, 300);
 
-    const handleChangePagination = (event: React.ChangeEvent<unknown>, value: number) => {
+        return () => clearTimeout(timeoutId);
+    }, [pageSelected, sort, filters, searchQuery]);
+
+    const handleChangePagination = (_event: React.ChangeEvent<unknown>, value: number) => {
         setPageSelected(value - 1);
     };
 
     const handleChangeSort = (event: SelectChangeEvent) => {
         setSort(event.target.value as string);
+    };
+
+    const handleSearchChange = (value: string) => {
+        setSearchQuery(value);
+        setPageSelected(0); // Réinitialiser à la première page lors d'une recherche
     };
 
     return (
@@ -76,6 +93,15 @@ const Home = () => {
                     <AddIcon sx={{ mr: 1 }} />
                     Ajouter une boutique
                 </Fab>
+            </Box>
+
+            {/* Barre de recherche */}
+            <Box sx={{ width: '100%' }}>
+                <SearchBar
+                    value={searchQuery}
+                    onChange={handleSearchChange}
+                    placeholder="Rechercher une boutique par nom..."
+                />
             </Box>
 
             {/* Sort and filters */}
@@ -111,7 +137,7 @@ const Home = () => {
             {/* Shops */}
             <Grid container alignItems="center" rowSpacing={3} columnSpacing={3}>
                 {shops?.map((shop) => (
-                    <Grid item key={shop.id} xs={4}>
+                    <Grid key={shop.id} size={4}>
                         <ShopCard shop={shop} />
                     </Grid>
                 ))}

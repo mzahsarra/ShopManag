@@ -1,10 +1,10 @@
-import { Category, MinimalCategory } from './category';
-import OpeningHours from './openingHours';
-import { LocalizedProduct, MinimalLocalizedProduct, Product, MinimalProduct, FormattedProduct } from './product';
-import { ResponseArray } from './response';
-import { Shop, MinimalShop } from './shop';
-import Toast from './toast';
-import ObjectPropertyString from './utils';
+import type {Category, MinimalCategory} from './category';
+import type {OpeningHours} from './openingHours';
+import type { LocalizedProduct, MinimalLocalizedProduct, Product, MinimalProduct, FormattedProduct } from './product';
+import type { ResponseArray } from './response';
+import type { Shop, MinimalShop } from './shop';
+import type {Toast} from './toast';
+import type {ObjectPropertyString} from './utils';
 
 export type {
     Category,

@@ -1,6 +1,6 @@
 import { Alert, Snackbar } from '@mui/material';
 import { useEffect, useState } from 'react';
-import { Toast } from '../types';
+import type { Toast } from '../types';
 
 type Props = {
     toast: Toast;
@@ -14,7 +14,7 @@ const Toaster = ({ toast }: Props) => {
         message && setOpen(true);
     }, [toast]);
 
-    const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+    const handleClose = (_event?: React.SyntheticEvent | Event, reason?: string) => {
         if (reason === 'clickaway') {
             return;
         }

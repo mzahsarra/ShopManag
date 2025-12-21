@@ -1,7 +1,7 @@
 import { IconButton, Menu, MenuItem } from '@mui/material';
 import { useState } from 'react';
 import LanguageIcon from '@mui/icons-material/Language';
-import Locale from '../types/locale';
+import {Locale} from '../types/locale';
 import { useAppContext } from '../context';
 
 const SwitchLanguage = () => {

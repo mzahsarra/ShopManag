@@ -4,7 +4,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { ActionButtons } from '../components';
 import { useAppContext, useToastContext } from '../context';
 import { ProductService } from '../services';
-import { FormattedProduct, Product } from '../types';
+import type { FormattedProduct, Product } from '../types';
 import { formatterLocalizedProduct, priceFormatter } from '../utils';
 
 const ProductDetails = () => {

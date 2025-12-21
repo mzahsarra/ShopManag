@@ -3,7 +3,7 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import moment from 'moment';
 import { useNavigate } from 'react-router-dom';
-import { Shop } from '../types';
+import type { Shop } from '../types';
 import { pluralize } from '../utils';
 
 type Props = {
@@ -25,6 +25,9 @@ const ShopCard = ({ shop }: Props) => {
                 </Typography>
                 <Typography variant="h6">
                     {shop.nbProducts} {pluralize('produit', shop.nbProducts)}
+                </Typography>
+                <Typography color="text.secondary">
+                    {shop.nbCategories} {pluralize('catégorie', shop.nbProducts)}
                 </Typography>
                 <Typography sx={{ my: 1.5 }} color="text.secondary">
                     Créée le : {moment(shop.createdAt).format('DD/MM/YYYY')}

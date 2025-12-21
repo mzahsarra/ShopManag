@@ -1,6 +1,6 @@
-import { createContext, useContext, useState } from 'react';
+import {createContext, type JSX, useContext, useState} from 'react';
 import { Toaster } from '../components';
-import { Toast } from '../types';
+import { type Toast } from '../types';
 
 interface ToastContextInterface {
     setToast: (toast: Toast) => void;
