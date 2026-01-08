@@ -5,60 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2353da60-4fb0-4e70-9aaf-391a03e64826" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/CI.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/google-java-format.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierrc.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CategoryCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CategoryCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Filters.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filters.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProductCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProductCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SelectPaginate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SelectPaginate.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ShopCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ShopCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ShopProducts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ShopProducts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SwitchLanguage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SwitchLanguage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Toaster.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Toaster.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/context/AppProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/AppProvider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/context/ToastProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/ToastProvider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Categories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Categories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CategoryDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CategoryDetails.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CategoryForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CategoryForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ProductDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProductDetails.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ProductForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProductForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Products.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Products.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ShopDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ShopDetails.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ShopForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ShopForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app-env.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/CategoryService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/CategoryService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/ProductService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ProductService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/ShopService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ShopService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/locale.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/locale.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/openingHours.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/openingHours.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/product.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/product.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/shop.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/shop.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/toast.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/toast.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/productUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/productUtils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../shop-server/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../shop-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/controller/ShopController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/controller/ShopController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/model/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/model/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/repository/ShopRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/repository/ShopRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/service/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/service/ShopService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/ShopAppApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/ShopAppApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/config/ElasticsearchIndexInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/config/ElasticsearchIndexInitializer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/target/classes/fr/fullstack/shopapp/config/WebSecurityConfig.class" afterDir="false" />
@@ -110,26 +67,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "main",
-    "javascript.preferred.runtime.type.id": "node",
-    "last_opened_file_path": "/home/clayton/Documents/M2/Fullstack/shop-manag/shop-client",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/home/clayton/Documents/M2/Fullstack/shop-manag/shop-client/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/clayton/Documents/M2/Fullstack/shop-manag/shop-client&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/clayton/Documents/M2/Fullstack/shop-manag/shop-client/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecapSpentCounter">
     <option name="endsOfQuotaMs" value="1766568629133" />
     <option name="spentUsd" value="0.26238808" />
@@ -153,7 +110,9 @@
       <updated>1766142570894</updated>
       <workItem from="1766142572099" duration="16019000" />
       <workItem from="1766223564449" duration="2720000" />
-      <workItem from="1766245937750" duration="13592000" />
+      <workItem from="1766245937750" duration="14702000" />
+      <workItem from="1766318310984" duration="3384000" />
+      <workItem from="1767863910713" duration="1012000" />
     </task>
     <servers />
   </component>
