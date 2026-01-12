@@ -23,32 +23,55 @@ const ProductCard = ({ product, displayShop = false }: Props) => {
 
     return (
         <Card
-            sx={{ minWidth: 275, height: displayShop ? 270 : 230, cursor: 'pointer' }}
+            sx={{
+                minWidth: 275,
+                height: displayShop ? { xs: 'auto', sm: 270 } : { xs: 'auto', sm: 230 },
+                cursor: 'pointer',
+                display: 'flex',
+                flexDirection: 'column'
+            }}
             onClick={() => navigate(`/product/${formattedProduct.id}`)}
         >
-            <CardContent>
-                <Typography variant="h4" color="text.primary" gutterBottom>
+            <CardContent sx={{ flex: 1 }}>
+                <Typography
+                    variant="h4"
+                    color="text.primary"
+                    gutterBottom
+                    sx={{ fontSize: { xs: '1.5rem', sm: '2rem' } }}
+                >
                     {formattedProduct.name}
                 </Typography>
-                <Typography variant="h6">Prix : {priceFormatter(formattedProduct.price)}</Typography>
+                <Typography variant="h6" sx={{ fontSize: { xs: '1rem', sm: '1.25rem' } }}>
+                    Prix : {priceFormatter(formattedProduct.price)}
+                </Typography>
                 {formattedProduct.description && (
-                    <Typography sx={{ mt: 1.5, maxHeight: 50, overflow: 'hidden' }} color="text.secondary">
+                    <Typography
+                        sx={{
+                            mt: 1.5,
+                            maxHeight: { xs: 'auto', sm: 50 },
+                            overflow: 'hidden',
+                            fontSize: { xs: '0.875rem', sm: '0.875rem' }
+                        }}
+                        color="text.secondary"
+                    >
                         {formattedProduct.description}
                     </Typography>
                 )}
                 {displayShop && (
-                    <Typography sx={{ mt: 1.5 }}>Boutique : {formattedProduct.shop?.name ?? 'Aucune'}</Typography>
+                    <Typography sx={{ mt: 1.5, fontSize: { xs: '0.875rem', sm: '1rem' } }}>
+                        Boutique : {formattedProduct.shop?.name ?? 'Aucune'}
+                    </Typography>
                 )}
-                <Typography sx={{ mt: 1.5, fontStyle: 'italic' }}>
+                <Typography sx={{ mt: 1.5, fontStyle: 'italic', fontSize: { xs: '0.875rem', sm: '1rem' } }}>
                     Catégories : {''}
                     {formattedProduct.categories.length === 0
                         ? 'Aucune'
                         : formattedProduct.categories.map((cat, index) => (
-                              <span key={cat.id}>
+                            <span key={cat.id}>
                                   {cat.name}
-                                  {index === formattedProduct.categories.length - 1 ? '' : ', '}
+                                {index === formattedProduct.categories.length - 1 ? '' : ', '}
                               </span>
-                          ))}
+                        ))}
                 </Typography>
             </CardContent>
         </Card>

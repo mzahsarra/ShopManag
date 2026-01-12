@@ -27,7 +27,6 @@ const ShopDetails = () => {
 
     const getShop = (shopId: string) => {
         ShopService.getShop(shopId).then((res) => {
-            // sort openingHours
             res.data.openingHours = res.data.openingHours.sort((a, b) => a.day - b.day);
             setShop(res.data);
         });
@@ -44,17 +43,17 @@ const ShopDetails = () => {
     const handleDelete = () => {
         setLoading(true);
         id &&
-            ShopService.deleteShop(id)
-                .then(() => {
-                    navigate('/');
-                    setToast({ severity: 'success', message: 'La boutique a bien été supprimée' });
-                })
-                .catch(() => {
-                    setToast({ severity: 'error', message: 'Une erreur est survenue lors de la suppresion' });
-                })
-                .finally(() => {
-                    setLoading(false);
-                });
+        ShopService.deleteShop(id)
+            .then(() => {
+                navigate('/');
+                setToast({ severity: 'success', message: 'La boutique a bien été supprimée' });
+            })
+            .catch(() => {
+                setToast({ severity: 'error', message: 'Une erreur est survenue lors de la suppresion' });
+            })
+            .finally(() => {
+                setLoading(false);
+            });
     };
 
     const handleEdit = () => {
@@ -68,21 +67,29 @@ const ShopDetails = () => {
             elevation={1}
             sx={{
                 position: 'relative',
-                padding: 4,
+                padding: { xs: 2, sm: 3, md: 4 },
             }}
         >
             <ActionButtons handleDelete={handleDelete} handleEdit={handleEdit} />
 
-            <Typography variant="h3" sx={{ textAlign: 'center', marginBottom: 3 }}>
+            <Typography
+                variant="h3"
+                sx={{
+                    textAlign: 'center',
+                    marginBottom: 3,
+                    fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' },
+                    pr: { xs: 8, sm: 0 }
+                }}
+            >
                 {shop.name}
             </Typography>
-            <Typography variant="h6">
+            <Typography variant="h6" sx={{ fontSize: { xs: '1rem', sm: '1.15rem', md: '1.25rem' } }}>
                 Cette boutique comporte {shop.nbProducts} {pluralize('produit', shop.nbProducts)}
             </Typography>
-            <Typography sx={{ my: 1 }}>
+            <Typography sx={{ my: 1, fontSize: { xs: '0.875rem', sm: '1rem' } }}>
                 {shop.inVacations ? 'En congé actuellement' : "N'est pas en congé actuellement"}
             </Typography>
-            <Typography sx={{ my: 1 }} color="text.secondary">
+            <Typography sx={{ my: 1, fontSize: { xs: '0.875rem', sm: '1rem' } }} color="text.secondary">
                 Boutique créée le : {moment(shop.createdAt).format('DD/MM/YYYY')}
             </Typography>
 
@@ -95,29 +102,46 @@ const ShopDetails = () => {
                     my: 4,
                 }}
             >
-                <Typography variant="h4" sx={{ mb: 2 }}>
+                <Typography
+                    variant="h4"
+                    sx={{
+                        mb: 2,
+                        fontSize: { xs: '1.25rem', sm: '1.75rem', md: '2rem' }
+                    }}
+                >
                     Horaires d&apos;ouverture :
                 </Typography>
                 {shop.openingHours.map((openingHour) => (
                     <Box
                         key={openingHour.id}
                         sx={{
-                            width: 200,
+                            width: { xs: '100%', sm: 250 },
+                            maxWidth: 300,
                             display: 'flex',
                             flexDirection: 'row',
                             alignItems: 'center',
                             justifyContent: 'space-between',
+                            px: { xs: 2, sm: 0 }
                         }}
                     >
-                        <Typography sx={{ mb: 1.5 }}>{DAY[openingHour.day]}</Typography>
-                        <Typography sx={{ mb: 1.5 }}>
+                        <Typography sx={{ mb: 1.5, fontSize: { xs: '0.875rem', sm: '1rem' } }}>
+                            {DAY[openingHour.day]}
+                        </Typography>
+                        <Typography sx={{ mb: 1.5, fontSize: { xs: '0.875rem', sm: '1rem' } }}>
                             {displayHours(openingHour?.openAt)} - {displayHours(openingHour?.closeAt)}
                         </Typography>
                     </Box>
                 ))}
             </Box>
 
-            <Typography variant="h4" sx={{ textAlign: 'center', mb: 2 }}>
+            <Typography
+                variant="h4"
+                sx={{
+                    textAlign: 'center',
+                    mb: 2,
+                    fontSize: { xs: '1.25rem', sm: '1.75rem', md: '2rem' }
+                }}
+            >
                 Les produits :
             </Typography>
             {id && <ShopProducts shopId={id} />}

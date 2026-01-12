@@ -18,21 +18,40 @@ const ShopCard = ({ shop }: Props) => {
     };
 
     return (
-        <Card sx={{ minWidth: 275, cursor: 'pointer' }} onClick={handleClick}>
-            <CardContent>
-                <Typography variant="h4" color="text.primary" gutterBottom sx={{ textAlign: 'center' }}>
+        <Card
+            sx={{
+                minWidth: 275,
+                cursor: 'pointer',
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column'
+            }}
+            onClick={handleClick}
+        >
+            <CardContent sx={{ flex: 1 }}>
+                <Typography
+                    variant="h4"
+                    color="text.primary"
+                    gutterBottom
+                    sx={{
+                        textAlign: 'center',
+                        fontSize: { xs: '1.5rem', sm: '2rem' }
+                    }}
+                >
                     {shop.name}
                 </Typography>
-                <Typography variant="h6">
+                <Typography variant="h6" sx={{ fontSize: { xs: '1rem', sm: '1.25rem' } }}>
                     {shop.nbProducts} {pluralize('produit', shop.nbProducts)}
                 </Typography>
-                <Typography color="text.secondary">
+                <Typography color="text.secondary" sx={{ fontSize: { xs: '0.875rem', sm: '1rem' } }}>
                     {shop.nbCategories} {pluralize('catégorie', shop.nbProducts)}
                 </Typography>
-                <Typography sx={{ my: 1.5 }} color="text.secondary">
+                <Typography sx={{ my: 1.5, fontSize: { xs: '0.875rem', sm: '1rem' } }} color="text.secondary">
                     Créée le : {moment(shop.createdAt).format('DD/MM/YYYY')}
                 </Typography>
-                <Typography>En congé : {shop.inVacations ? 'oui' : 'non'}</Typography>
+                <Typography sx={{ fontSize: { xs: '0.875rem', sm: '1rem' } }}>
+                    En congé : {shop.inVacations ? 'oui' : 'non'}
+                </Typography>
             </CardContent>
         </Card>
     );

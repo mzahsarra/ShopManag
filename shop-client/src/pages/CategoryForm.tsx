@@ -81,8 +81,15 @@ const CategoryForm = () => {
     };
 
     return (
-        <Paper elevation={1} sx={{ padding: 4 }}>
-            <Typography variant="h2" sx={{ marginBottom: 3, textAlign: 'center' }}>
+        <Paper elevation={1} sx={{ padding: { xs: 2, sm: 3, md: 4 } }}>
+            <Typography 
+                variant="h2" 
+                sx={{ 
+                    marginBottom: 3, 
+                    textAlign: 'center',
+                    fontSize: { xs: '1.75rem', sm: '2.5rem', md: '3rem' }
+                }}
+            >
                 {isAddMode ? 'Ajouter une catégorie' : 'Modifier la catégorie'}
             </Typography>
 
@@ -92,7 +99,7 @@ const CategoryForm = () => {
                     flexDirection: 'column',
                     ml: 'auto',
                     mr: 'auto',
-                    width: '70%',
+                    width: { xs: '100%', sm: '85%', md: '70%' },
                     mb: 2,
                 }}
             >
@@ -105,7 +112,7 @@ const CategoryForm = () => {
                     onChange={(e) => setCategory({ ...category, name: e.target.value })}
                     error={!!errors?.name}
                     helperText={errors?.name}
-                    sx={{ my: 2, width: '75%', ml: 'auto', mr: 'auto' }}
+                    sx={{ my: 2, width: { xs: '100%', sm: '85%', md: '75%' }, ml: 'auto', mr: 'auto' }}
                 />
             </FormControl>
 

@@ -12,6 +12,8 @@ import {
     Switch,
     TextField,
     Typography,
+    useMediaQuery,
+    useTheme,
 } from '@mui/material';
 import ClearIcon from '@mui/icons-material/Clear';
 import AddIcon from '@mui/icons-material/Add';
@@ -33,6 +35,8 @@ const ShopForm = () => {
     const { id } = useParams();
     const isAddMode = !id;
     const navigate = useNavigate();
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
     const { setLoading } = useAppContext();
     const { setToast } = useToastContext();
     const [errors, setErrors] = useState<ObjectPropertyString<MinimalShop>>();
@@ -120,14 +124,21 @@ const ShopForm = () => {
     };
 
     return (
-        <Paper elevation={1} sx={{ padding: 4 }}>
-            <Typography variant="h2" sx={{ marginBottom: 3, textAlign: 'center' }}>
+        <Paper elevation={1} sx={{ padding: { xs: 2, sm: 3, md: 4 } }}>
+            <Typography
+                variant="h2"
+                sx={{
+                    marginBottom: 3,
+                    textAlign: 'center',
+                    fontSize: { xs: '1.75rem', sm: '2.5rem', md: '3rem' }
+                }}
+            >
                 {isAddMode ? 'Ajouter une boutique' : 'Modifier la boutique'}
             </Typography>
 
-            <Box sx={{ display: 'block', ml: 'auto', mr: 'auto', width: '80%', mb: 3 }}>
+            <Box sx={{ display: 'block', ml: 'auto', mr: 'auto', width: { xs: '100%', sm: '90%', md: '80%' }, mb: 3 }}>
                 <Divider>Informations de la boutique</Divider>
-                <FormControl sx={{ mt: 2, width: '50%' }}>
+                <FormControl sx={{ mt: 2, width: { xs: '100%', sm: '70%', md: '50%' } }}>
                     <TextField
                         autoFocus
                         required
@@ -166,16 +177,17 @@ const ShopForm = () => {
                         <Paper elevation={2} key={index} sx={{ position: 'relative' }}>
                             <Box
                                 sx={{
-                                    px: 2,
+                                    px: { xs: 1.5, sm: 2 },
                                     pb: 1,
-                                    pt: 7,
+                                    pt: { xs: 6, sm: 7 },
                                     display: 'flex',
-                                    flexDirection: 'row',
+                                    flexDirection: { xs: 'column', sm: 'row' },
                                     justifyContent: 'center',
-                                    gap: 1,
+                                    alignItems: { xs: 'stretch', sm: 'flex-start' },
+                                    gap: { xs: 2, sm: 1 },
                                 }}
                             >
-                                <FormControl sx={{ marginBottom: 2 }}>
+                                <FormControl sx={{ marginBottom: { xs: 0, sm: 2 }, width: { xs: '100%', sm: 'auto' } }}>
                                     <InputLabel id={`day-select-label-${index}`}>Jour</InputLabel>
                                     <Select
                                         labelId={`day-select-label-${index}`}
@@ -183,7 +195,7 @@ const ShopForm = () => {
                                         value={openingHour.day}
                                         label="Jour"
                                         onChange={(e) => handleChange(index, 'day', e.target.value)}
-                                        sx={{ minWidth: 125 }}
+                                        sx={{ minWidth: { xs: '100%', sm: 125 } }}
                                     >
                                         <MenuItem value={1}>Lundi</MenuItem>
                                         <MenuItem value={2}>Mardi</MenuItem>
@@ -209,6 +221,7 @@ const ShopForm = () => {
                                                 fullWidth: true
                                             }
                                         }}
+                                        sx={{ width: { xs: '100%', sm: 'auto' } }}
                                     />
                                 </LocalizationProvider>
                                 <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -226,6 +239,7 @@ const ShopForm = () => {
                                                 fullWidth: true
                                             }
                                         }}
+                                        sx={{ width: { xs: '100%', sm: 'auto' } }}
                                     />
                                 </LocalizationProvider>
                             </Box>
@@ -244,7 +258,7 @@ const ShopForm = () => {
             </Box>
 
             <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                <Button variant="contained" onClick={handleSubmit}>
+                <Button variant="contained" onClick={handleSubmit} fullWidth={isMobile} sx={{ maxWidth: isMobile ? 'none' : 'auto' }}>
                     Valider
                 </Button>
             </Box>

@@ -1,7 +1,7 @@
 import { CategoryService, ProductService } from '../services';
 import { useEffect, useState } from 'react';
 import type { Category, Product, ResponseArray } from '../types';
-import { Box, FormControl, Grid, Pagination, Typography } from '@mui/material';
+import { Box, FormControl, Grid, Pagination, Typography, useMediaQuery, useTheme } from '@mui/material';
 import ProductCard from './ProductCard';
 import { useAppContext } from '../context';
 import SelectPaginate from './SelectPaginate';
@@ -11,6 +11,8 @@ type Props = {
 };
 
 const ShopProducts = ({ shopId }: Props) => {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
     const { setLoading } = useAppContext();
     const [products, setProducts] = useState<Product[] | null>(null);
     const [count, setCount] = useState<number>(0);
@@ -46,7 +48,7 @@ const ShopProducts = ({ shopId }: Props) => {
     };
 
     return (
-        <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 5 }}>
+        <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: { xs: 3, sm: 4, md: 5 } }}>
             {/* Filters */}
             <Box
                 sx={{
@@ -56,7 +58,7 @@ const ShopProducts = ({ shopId }: Props) => {
                     justifyContent: 'space-between',
                 }}
             >
-                <FormControl sx={{ minWidth: 220 }}>
+                <FormControl sx={{ minWidth: { xs: '100%', sm: 220 } }}>
                     <SelectPaginate
                         value={filter}
                         onChange={setFilter}
@@ -67,18 +69,24 @@ const ShopProducts = ({ shopId }: Props) => {
                 </FormControl>
             </Box>
 
-            <Grid container alignItems="center" rowSpacing={3} columnSpacing={3}>
+            <Grid container alignItems="stretch" rowSpacing={3} columnSpacing={3}>
                 {products?.map((product) => (
-                    <Grid key={product.id} size={4}>
+                    <Grid key={product.id} size={{ xs: 12, sm: 6, md: 4 }}>
                         <ProductCard product={product} />
                     </Grid>
                 ))}
             </Grid>
 
             {products?.length !== 0 ? (
-                <Pagination count={count} page={page} siblingCount={1} onChange={handleChangePagination} />
+                <Pagination
+                    count={count}
+                    page={page}
+                    siblingCount={isMobile ? 0 : 1}
+                    onChange={handleChangePagination}
+                    size={isMobile ? 'small' : 'medium'}
+                />
             ) : (
-                <Typography variant="h6" sx={{ mt: -4 }}>
+                <Typography variant="h6" sx={{ mt: -4, fontSize: { xs: '1rem', sm: '1.25rem' } }}>
                     Aucun produit correspondant
                 </Typography>
             )}

@@ -139,9 +139,12 @@ const Layout = ({ children }: Props) => {
                 component="main"
                 sx={{
                     flexGrow: 1,
-                    mt: { xs: 7, sm: 8 }, // Marge pour l'AppBar
-                    px: { xs: 2, sm: 3, md: 4 },
-                    py: { xs: 2, sm: 3 }
+                    mt: { xs: 7, sm: 8 },
+                    px: { xs: 2, sm: 3, md: 4, lg: 6, xl: 8 }, // Marges adaptatives
+                    py: { xs: 2, sm: 3 },
+                    maxWidth: '1400px', // Largeur maximale pour les grands écrans
+                    mx: 'auto', // Centrage automatique
+                    width: '100%'
                 }}
             >
                 {children}

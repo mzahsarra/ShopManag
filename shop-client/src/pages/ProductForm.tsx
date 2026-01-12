@@ -141,14 +141,27 @@ const ProductForm = () => {
     };
 
     return (
-        <Paper elevation={1} sx={{ padding: 4 }}>
-            <Typography variant="h2" sx={{ marginBottom: 3, textAlign: 'center' }}>
+        <Paper elevation={1} sx={{ padding: { xs: 2, sm: 3, md: 4 } }}>
+            <Typography
+                variant="h2"
+                sx={{
+                    marginBottom: 3,
+                    textAlign: 'center',
+                    fontSize: { xs: '1.75rem', sm: '2.5rem', md: '3rem' }
+                }}
+            >
                 {isAddMode ? 'Ajouter un produit' : 'Modifier le produit'}
             </Typography>
 
-            <FormControl sx={{ display: 'block', ml: 'auto', mr: 'auto', width: '75%', mb: 3 }}>
+            <FormControl sx={{ display: 'block', ml: 'auto', mr: 'auto', width: { xs: '100%', sm: '90%', md: '75%' }, mb: 3 }}>
                 <Divider>Nom du produit</Divider>
-                <Box sx={{ display: 'flex', flexDirection: 'row', gap: 4, mt: 2, mb: 6 }}>
+                <Box sx={{
+                    display: 'flex',
+                    flexDirection: { xs: 'column', md: 'row' },
+                    gap: { xs: 2, md: 4 },
+                    mt: 2,
+                    mb: { xs: 3, md: 6 }
+                }}>
                     <TextField
                         autoFocus
                         required
@@ -158,7 +171,7 @@ const ProductForm = () => {
                         fullWidth
                         error={!!errors.nameFr}
                         helperText={errors.nameFr}
-                        sx={{ width: '50%' }}
+                        sx={{ width: { xs: '100%', md: '50%' } }}
                     />
                     <TextField
                         autoFocus
@@ -168,12 +181,18 @@ const ProductForm = () => {
                         fullWidth
                         error={!!errors.nameEn}
                         helperText={errors.nameEn}
-                        sx={{ width: '50%' }}
+                        sx={{ width: { xs: '100%', md: '50%' } }}
                     />
                 </Box>
 
                 <Divider>Description</Divider>
-                <Box sx={{ display: 'flex', flexDirection: 'row', gap: 4, mt: 2, mb: 6 }}>
+                <Box sx={{
+                    display: 'flex',
+                    flexDirection: { xs: 'column', md: 'row' },
+                    gap: { xs: 2, md: 4 },
+                    mt: 2,
+                    mb: { xs: 3, md: 6 }
+                }}>
                     <TextField
                         autoFocus
                         multiline
@@ -182,7 +201,7 @@ const ProductForm = () => {
                         value={getLocalizedProduct(product.localizedProducts, Locale.FR).description}
                         onChange={(e) => handleChange(Locale.FR, 'description', e.target.value)}
                         fullWidth
-                        sx={{ width: '50%' }}
+                        sx={{ width: { xs: '100%', md: '50%' } }}
                     />
 
                     <TextField
@@ -193,12 +212,18 @@ const ProductForm = () => {
                         value={getLocalizedProduct(product.localizedProducts, Locale.EN).description}
                         onChange={(e) => handleChange(Locale.EN, 'description', e.target.value)}
                         fullWidth
-                        sx={{ width: '50%' }}
+                        sx={{ width: { xs: '100%', md: '50%' } }}
                     />
                 </Box>
 
                 <Divider>Informations supplémentaires</Divider>
-                <Box sx={{ display: 'flex', flexDirection: 'row', gap: 4, mt: 2, mb: 3 }}>
+                <Box sx={{
+                    display: 'flex',
+                    flexDirection: { xs: 'column', md: 'row' },
+                    gap: { xs: 2, md: 4 },
+                    mt: 2,
+                    mb: 3
+                }}>
                     <TextField
                         autoFocus
                         required
@@ -212,10 +237,10 @@ const ProductForm = () => {
                         }}
                         error={!!errors.price}
                         helperText={errors.price}
-                        sx={{ width: '50%' }}
+                        sx={{ width: { xs: '100%', md: '50%' } }}
                     />
 
-                    <Box sx={{ width: '50%' }}>
+                    <Box sx={{ width: { xs: '100%', md: '50%' } }}>
                         <SelectPaginate
                             value={product.shop}
                             onChange={setShop}
