@@ -3,10 +3,12 @@ package fr.fullstack.shopapp.service;
 import fr.fullstack.shopapp.model.Product;
 import fr.fullstack.shopapp.model.Shop;
 import fr.fullstack.shopapp.repository.ShopRepository;
+import fr.fullstack.shopapp.repository.ShopSearchRepository;
 import org.hibernate.search.mapper.orm.Search;
 import org.hibernate.search.mapper.orm.session.SearchSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,6 +28,10 @@ public class ShopService {
 
     @Autowired
     private ShopRepository shopRepository;
+
+    @Autowired
+    private ShopSearchRepository shopSearchRepository;
+
 
     @Transactional
     public Shop createShop(Shop shop) throws Exception {
@@ -188,4 +194,11 @@ public class ShopService {
         }
         return indexInfo;
     }
+
+    public Page<Shop> searchShops(Optional<String> q, Optional<Boolean> inVacations, Pageable pageable) {
+        return shopSearchRepository.searchByName(q, inVacations, pageable);
+    }
+
+
 }
+
