@@ -51,6 +51,8 @@ public class ShopController {
             Pageable pageable,
             @RequestParam(required = false) Optional<String> q,
             @RequestParam(required = false) Optional<Boolean> inVacations
+            @RequestParam(required = false) Optional<String> createdAfter,
+            @RequestParam(required = false) Optional<String> createdBefore
     ) {
         return ResponseEntity.ok(service.searchShops(q, inVacations, pageable));
     }

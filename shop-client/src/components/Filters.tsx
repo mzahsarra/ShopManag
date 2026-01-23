@@ -130,7 +130,7 @@ const Filters = ({ setUrlFilters, setSort, sort }: Props) => {
                             label="Créée avant"
                             format="DD/MM/YYYY"
                             value={filters.createdBefore}
-                            onChange={(v) => handleChange('createdAfter', v)}
+                            onChange={(v) => handleChange('createdBefore', v)}
                             slotProps={{
                                 textField: {
                                     variant: 'outlined',

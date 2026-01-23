@@ -37,26 +37,30 @@ const Home = () => {
     const [searchQuery, setSearchQuery] = useState<string>('');
 
     const getShops = () => {
-          setLoading(true);
+                setLoading(true);
 
-        let promisedShops: Promise<ResponseArray<Shop>>;
-            if (searchQuery.trim()) {
-                // ✅ Recherche Elasticsearch
-            promisedShops = ShopService.searchShops(pageSelected, 9, searchQuery.trim());
-            } else if (sort) {
-                promisedShops = ShopService.getShopsSorted(pageSelected, 9, sort);
-            } else if (filters) {
-                promisedShops = ShopService.getShopsFiltered(pageSelected, 9, filters);
-            } else {
-                promisedShops = ShopService.getShops(pageSelected, 9);
-            }
-            promisedShops
-                .then((res) => {
-                setShops(res.data.content);
-                setCount(res.data.totalPages);
-                setPage(res.data.pageable.pageNumber + 1);
-                })
-                .finally(() => setLoading(false));
+                let promisedShops: Promise<ResponseArray<Shop>>;
+
+                const q = searchQuery.trim();
+
+                if (q) {
+                    // ✅ Recherche Elasticsearch + on garde les filtres
+                    promisedShops = ShopService.searchShops(pageSelected, 9, q, filters);
+                } else if (sort) {
+                    promisedShops = ShopService.getShopsSorted(pageSelected, 9, sort);
+                } else if (filters) {
+                    promisedShops = ShopService.getShopsFiltered(pageSelected, 9, filters);
+                } else {
+                    promisedShops = ShopService.getShops(pageSelected, 9);
+                }
+
+                promisedShops
+                    .then((res) => {
+                    setShops(res.data.content);
+                    setCount(res.data.totalPages);
+                    setPage(res.data.pageable.pageNumber + 1);
+                    })
+                    .finally(() => setLoading(false));
                 };
 
     useEffect(() => {

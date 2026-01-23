@@ -31,6 +31,7 @@ public class Shop {
     @CreationTimestamp
     @Column(name = "created_at", nullable = false, updatable = false)
     @JsonFormat(pattern = "yyyy-MM-dd")
+    @GenericField
     private LocalDate createdAt;
 
     @Id
