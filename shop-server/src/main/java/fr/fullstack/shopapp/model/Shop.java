@@ -51,6 +51,15 @@ public class Shop {
     @Formula(value = "(SELECT COUNT(*) FROM products p WHERE p.shop_id = id)")
     private Long nbProducts;
 
+    @Formula(
+            value = "(SELECT COUNT(DISTINCT pc.category_id) " +
+                    "FROM products_categories pc " +
+                    "JOIN products p ON p.id = pc.product_id " +
+                    "WHERE p.shop_id = id)"
+    )
+    private Long nbCategories;
+
+
     @OneToMany(cascade = {CascadeType.ALL})
     private List<@Valid OpeningHoursShop> openingHours = new ArrayList<OpeningHoursShop>();
 
@@ -109,4 +118,9 @@ public class Shop {
     public void setProducts(List<Product> products) {
         this.products = products;
     }
+
+    public long getNbCategories() {
+        return nbCategories;
+    }
+
 }

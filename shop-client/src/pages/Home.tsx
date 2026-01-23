@@ -21,6 +21,7 @@ import { ShopService } from '../services';
 import type {ResponseArray, Shop} from '../types';
 
 const Home = () => {
+
     const navigate = useNavigate();
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -36,29 +37,27 @@ const Home = () => {
     const [searchQuery, setSearchQuery] = useState<string>('');
 
     const getShops = () => {
-        setLoading(true);
+          setLoading(true);
+
         let promisedShops: Promise<ResponseArray<Shop>>;
-
-        const searchParam = searchQuery ? `&name=${encodeURIComponent(searchQuery)}` : '';
-
-        if (sort) {
-            promisedShops = ShopService.getShopsSorted(pageSelected, 9, sort + searchParam);
-        } else if (filters) {
-            promisedShops = ShopService.getShopsFiltered(pageSelected, 9, filters + searchParam);
-        } else if (searchQuery) {
-            promisedShops = ShopService.getShopsFiltered(pageSelected, 9, searchParam);
-        } else {
-            promisedShops = ShopService.getShops(pageSelected, 9);
-        }
-
-        promisedShops
-            .then((res) => {
+            if (searchQuery.trim()) {
+                // ✅ Recherche Elasticsearch
+            promisedShops = ShopService.searchShops(pageSelected, 9, searchQuery.trim());
+            } else if (sort) {
+                promisedShops = ShopService.getShopsSorted(pageSelected, 9, sort);
+            } else if (filters) {
+                promisedShops = ShopService.getShopsFiltered(pageSelected, 9, filters);
+            } else {
+                promisedShops = ShopService.getShops(pageSelected, 9);
+            }
+            promisedShops
+                .then((res) => {
                 setShops(res.data.content);
                 setCount(res.data.totalPages);
                 setPage(res.data.pageable.pageNumber + 1);
-            })
-            .finally(() => setLoading(false));
-    };
+                })
+                .finally(() => setLoading(false));
+                };
 
     useEffect(() => {
         const timeoutId = setTimeout(() => {

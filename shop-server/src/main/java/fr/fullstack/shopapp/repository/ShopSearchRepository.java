@@ -32,29 +32,48 @@ public class ShopSearchRepository {
                     if (queryText.isEmpty()) {
                         bool.must(f.matchAll());
                     } else {
-                        // Combiner plusieurs stratégies de recherche
-                        bool.must(f.bool()
-                                // 1. Match exact (meilleur score)
-                                .should(f.match()
-                                        .field("name")
-                                        .matching(queryText)
-                                        .boost(3.0f))
-                                // 2. Match avec préfixe
-                                .should(f.wildcard()
-                                        .field("name")
-                                        .matching(queryText.toLowerCase() + "*")
-                                        .boost(2.0f))
-                                // 3. Match partiel (contient)
-                                .should(f.wildcard()
-                                        .field("name")
-                                        .matching("*" + queryText.toLowerCase() + "*")
-                                        .boost(1.0f))
-                                // 4. Fuzzy search (tolérance aux fautes)
-                                .should(f.match()
-                                        .field("name")
-                                        .matching(queryText)
-                                        .fuzzy(2))
-                        );
+                        String lowered = queryText.toLowerCase();
+
+                        // Recherche plus stricte :
+                        // - phrase match (exact dans l’ordre)
+                        // - préfixe (commence par)
+                        // - contient (mais seulement si la requête est assez longue)
+                        // - fuzzy seulement si la requête est assez longue
+                        var sub = f.bool();
+
+                        // 1) Phrase / exact (prioritaire)
+                        sub.should(f.phrase()
+                                .field("name")
+                                .matching(queryText)
+                                .boost(5.0f));
+
+                        // 2) Préfixe
+                        sub.should(f.wildcard()
+                                .field("name")
+                                .matching(lowered + "*")
+                                .boost(3.0f));
+
+                        // 3) Contient : uniquement si la requête >= 3 caractères
+                        if (lowered.length() >= 3) {
+                            sub.should(f.wildcard()
+                                    .field("name")
+                                    .matching("*" + lowered + "*")
+                                    .boost(1.5f));
+                        }
+
+                        // 4) Fuzzy : uniquement si la requête >= 4 caractères
+                        if (lowered.length() >= 4) {
+                            sub.should(f.match()
+                                    .field("name")
+                                    .matching(queryText)
+                                    .fuzzy(1)     // ↓ 2 -> 1 (beaucoup moins permissif)
+                                    .boost(1.0f));
+                        }
+
+                        // IMPORTANT : on exige qu’au moins 1 "should" matche réellement
+                        sub.minimumShouldMatchNumber(1);
+
+                        bool.must(sub);
                     }
 
                     // Filtre optionnel sur inVacations

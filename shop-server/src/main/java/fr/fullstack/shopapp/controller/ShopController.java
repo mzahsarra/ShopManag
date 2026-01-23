@@ -45,7 +45,7 @@ public class ShopController {
         }
     }
 
-    // ⚠️ ROUTES SPÉCIFIQUES EN PREMIER
+
     @GetMapping("/search")
     public ResponseEntity<Page<Shop>> searchShops(
             Pageable pageable,
@@ -65,7 +65,7 @@ public class ShopController {
         }
     }
 
-    // ⚠️ ROUTES GÉNÉRALES ENSUITE
+
     @GetMapping
     public ResponseEntity<Page<Shop>> getAllShops(
             Pageable pageable,
