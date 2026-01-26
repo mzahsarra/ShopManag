@@ -3,6 +3,7 @@ package fr.fullstack.shopapp.controller;
 import fr.fullstack.shopapp.model.Category;
 import fr.fullstack.shopapp.service.CategoryService;
 import fr.fullstack.shopapp.util.ErrorValidation;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -64,7 +65,10 @@ public class CategoryController {
     @GetMapping("/{id}")
     public ResponseEntity<Category> getCategoryById(@PathVariable long id) {
         try {
-            return ResponseEntity.ok().body(service.getCategoryById(id));
+            Category category = service.getCategoryById(id);
+            return ResponseEntity.ok().body(category);
+        } catch (EntityNotFoundException e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Category not found");
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
         }

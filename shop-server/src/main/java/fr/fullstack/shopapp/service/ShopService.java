@@ -3,7 +3,6 @@ package fr.fullstack.shopapp.service;
 import fr.fullstack.shopapp.model.Product;
 import fr.fullstack.shopapp.model.Shop;
 import fr.fullstack.shopapp.repository.ShopRepository;
-import fr.fullstack.shopapp.repository.ShopSearchRepository;
 import org.hibernate.search.mapper.orm.Search;
 import org.hibernate.search.mapper.orm.session.SearchSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,10 +27,6 @@ public class ShopService {
 
     @Autowired
     private ShopRepository shopRepository;
-
-    @Autowired
-    private ShopSearchRepository shopSearchRepository;
-
 
     @Transactional
     public Shop createShop(Shop shop) throws Exception {
@@ -71,8 +66,12 @@ public class ShopService {
             Optional<Boolean> inVacations,
             Optional<String> createdBefore,
             Optional<String> createdAfter,
+            Optional<String> name,
             Pageable pageable
     ) {
+        if (name.isPresent() && !name.get().trim().isEmpty()) {
+            return searchShopsByName(name.get().trim(), inVacations, createdBefore, createdAfter, pageable);
+        }
         // SORT
         if (sortBy.isPresent()) {
             switch (sortBy.get()) {
@@ -174,6 +173,125 @@ public class ShopService {
 
         return null;
     }
+    // Recherche de boutiques par nom en utilisant Hibernate Search (Elasticsearch)
+    private Page<Shop> searchShopsByName(
+            String searchTerm,
+            Optional<Boolean> inVacations,
+            Optional<String> createdAfter,
+            Optional<String> createdBefore,
+            Pageable pageable
+    ) {
+        try {
+            SearchSession searchSession = Search.session(em);
+            var searchQuery = searchSession.search(Shop.class)
+                    .where(f -> {
+                        var nameFuzzy = f.match()
+                                .field("name")
+                                .matching(searchTerm)
+                                .fuzzy(2);
+
+                        if (!inVacations.isPresent() && !createdAfter.isPresent() && !createdBefore.isPresent()) {
+                            return nameFuzzy;
+                        }
+                        var boolQuery = f.bool().must(nameFuzzy);
+
+                        if (inVacations.isPresent()) {
+                            boolQuery.must(f.match()
+                                    .field("inVacations")
+                                    .matching(inVacations.get()));
+                        }
+
+                        if (createdAfter.isPresent()) {
+                            boolQuery.must(f.range()
+                                    .field("createdAt")
+                                    .atLeast(LocalDate.parse(createdAfter.get())));
+                        }
+
+                        if (createdBefore.isPresent()) {
+                            boolQuery.must(f.range()
+                                    .field("createdAt")
+                                    .atMost(LocalDate.parse(createdBefore.get())));
+                        }
+
+                        return boolQuery;
+                    });
+
+            var searchResult = searchQuery.fetch((int) pageable.getOffset(), pageable.getPageSize());
+
+            List<Shop> shops = searchResult.hits();
+            long totalHits = searchResult.total().hitCount();
+
+            return new PageImpl<>(shops, pageable, totalHits);
+
+        } catch (Exception e) {
+            // En cas d'erreur Elasticsearch, fallback sur recherche JPA
+            System.err.println("Elasticsearch search failed, falling back to JPA: " + e.getMessage());
+            e.printStackTrace();
+            return fallbackToJpaSearch(searchTerm, inVacations, createdAfter, createdBefore, pageable);
+        }
+    }
+
+    /**
+     * Fallback sur recherche JPA si Elasticsearch échoue
+     */
+    private Page<Shop> fallbackToJpaSearch(
+            String searchTerm,
+            Optional<Boolean> inVacations,
+            Optional<String> createdAfter,
+            Optional<String> createdBefore,
+            Pageable pageable
+    ) {
+        if (inVacations.isPresent() && createdBefore.isPresent() && createdAfter.isPresent()) {
+            return shopRepository.findByNameContainingIgnoreCaseAndInVacationsAndCreatedAtGreaterThanAndCreatedAtLessThan(
+                    searchTerm,
+                    inVacations.get(),
+                    LocalDate.parse(createdAfter.get()),
+                    LocalDate.parse(createdBefore.get()),
+                    pageable
+            );
+        }
+
+        if (inVacations.isPresent() && createdBefore.isPresent()) {
+            return shopRepository.findByNameContainingIgnoreCaseAndInVacationsAndCreatedAtLessThan(
+                    searchTerm, inVacations.get(), LocalDate.parse(createdBefore.get()), pageable
+            );
+        }
+
+        if (inVacations.isPresent() && createdAfter.isPresent()) {
+            return shopRepository.findByNameContainingIgnoreCaseAndInVacationsAndCreatedAtGreaterThan(
+                    searchTerm, inVacations.get(), LocalDate.parse(createdAfter.get()), pageable
+            );
+        }
+
+        if (inVacations.isPresent()) {
+            return shopRepository.findByNameContainingIgnoreCaseAndInVacations(
+                    searchTerm, inVacations.get(), pageable
+            );
+        }
+
+        if (createdBefore.isPresent() && createdAfter.isPresent()) {
+            return shopRepository.findByNameContainingIgnoreCaseAndCreatedAtBetween(
+                    searchTerm,
+                    LocalDate.parse(createdAfter.get()),
+                    LocalDate.parse(createdBefore.get()),
+                    pageable
+            );
+        }
+
+        if (createdBefore.isPresent()) {
+            return shopRepository.findByNameContainingIgnoreCaseAndCreatedAtLessThan(
+                    searchTerm, LocalDate.parse(createdBefore.get()), pageable
+            );
+        }
+
+        if (createdAfter.isPresent()) {
+            return shopRepository.findByNameContainingIgnoreCaseAndCreatedAtGreaterThan(
+                    searchTerm, LocalDate.parse(createdAfter.get()), pageable
+            );
+        }
+
+        return shopRepository.findByNameContainingIgnoreCase(searchTerm, pageable);
+    }
 
     public Map<String, Object> getElasticsearchIndexInfo() {
         Map<String, Object> indexInfo = new HashMap<>();
@@ -182,7 +300,7 @@ public class ShopService {
             long documentCount = searchSession.search(Shop.class)
                     .where(f -> f.matchAll())
                     .fetchTotalHitCount();
-            
+
             indexInfo.put("indexName", "idx_shops");
             indexInfo.put("documentCount", documentCount);
             indexInfo.put("status", "active");
@@ -194,11 +312,4 @@ public class ShopService {
         }
         return indexInfo;
     }
-
-    public Page<Shop> searchShops(Optional<String> q, Optional<Boolean> inVacations, Pageable pageable) {
-        return shopSearchRepository.searchByName(q, inVacations, pageable);
-    }
-
-
 }
-

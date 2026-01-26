@@ -2,21 +2,14 @@ package fr.fullstack.shopapp.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import fr.fullstack.shopapp.validation.ValidOpeningHours;
+import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.Formula;
 import org.hibernate.search.mapper.pojo.mapping.definition.annotation.FullTextField;
 import org.hibernate.search.mapper.pojo.mapping.definition.annotation.GenericField;
 import org.hibernate.search.mapper.pojo.mapping.definition.annotation.Indexed;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -35,7 +28,8 @@ public class Shop {
     private LocalDate createdAt;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "shop_generator")
+    @SequenceGenerator(name="shop_generator", sequenceName = "hibernate_sequence", allocationSize=1)
     private long id;
 
     @Column(nullable = false)
@@ -52,16 +46,13 @@ public class Shop {
     @Formula(value = "(SELECT COUNT(*) FROM products p WHERE p.shop_id = id)")
     private Long nbProducts;
 
-    @Formula(
-            value = "(SELECT COUNT(DISTINCT pc.category_id) " +
-                    "FROM products_categories pc " +
-                    "JOIN products p ON p.id = pc.product_id " +
-                    "WHERE p.shop_id = id)"
-    )
+    @Formula("(SELECT COUNT(DISTINCT pc.category_id) FROM products_categories pc " +
+            "JOIN products p ON pc.product_id = p.id " +
+            "WHERE p.shop_id = id)")
     private Long nbCategories;
 
-
     @OneToMany(cascade = {CascadeType.ALL})
+    @ValidOpeningHours
     private List<@Valid OpeningHoursShop> openingHours = new ArrayList<OpeningHoursShop>();
 
     @OneToMany(mappedBy = "shop", fetch = FetchType.LAZY)
@@ -87,6 +78,9 @@ public class Shop {
     public long getNbProducts() {
         return nbProducts;
     }
+    public Long getNbCategories() {
+        return nbCategories;
+    }
 
     public List<OpeningHoursShop> getOpeningHours() {
         return openingHours;
@@ -111,7 +105,9 @@ public class Shop {
     public void setNbProducts(long nbProducts) {
         this.nbProducts = nbProducts;
     }
-
+    public void setNbCategories(Long nbCategories) {
+        this.nbCategories = nbCategories;
+    }
     public void setOpeningHours(List<OpeningHoursShop> openingHours) {
         this.openingHours = openingHours;
     }
@@ -119,9 +115,4 @@ public class Shop {
     public void setProducts(List<Product> products) {
         this.products = products;
     }
-
-    public long getNbCategories() {
-        return nbCategories;
-    }
-
 }

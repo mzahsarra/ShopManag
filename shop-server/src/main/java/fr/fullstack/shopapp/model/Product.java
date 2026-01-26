@@ -37,10 +37,14 @@ public class Product {
     @Size(min = 1, message = "At least one name and one description must be provided")
     private List<@Valid LocalizedProduct> localizedProduct = new ArrayList<LocalizedProduct>();
 
+    // ...
     @Column(nullable = false)
     @PositiveOrZero(message = "Price must be positive")
     @NotNull(message = "Price may not be null")
-    private float price;
+    private long price;
+
+
+// ...
 
     @ManyToOne
     private Shop shop;
@@ -57,7 +61,7 @@ public class Product {
         return localizedProduct;
     }
 
-    public float getPrice() {
+    public long getPrice() {
         return price;
     }
 
@@ -77,8 +81,12 @@ public class Product {
         this.localizedProduct = localizedProduct;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(long price) {
         this.price = price;
+    }
+    @com.fasterxml.jackson.annotation.JsonSetter("price")
+    public void setPrice(double priceInEuro) {
+        this.price = Math.round(priceInEuro * 100);
     }
 
     public void setShop(Shop shop) {

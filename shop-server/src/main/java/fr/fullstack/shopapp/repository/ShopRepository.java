@@ -47,4 +47,24 @@ public interface ShopRepository extends JpaRepository<Shop, Long> {
             nativeQuery = true
     )
     Page<Shop> findByOrderByNbProductsAsc(Pageable pageable);
+    // SEARCH BY NAME en JPA
+    Page<Shop> findByNameContainingIgnoreCase(String name, Pageable pageable);
+
+    Page<Shop> findByNameContainingIgnoreCaseAndInVacations(String name, boolean inVacations, Pageable pageable);
+
+    Page<Shop> findByNameContainingIgnoreCaseAndInVacationsAndCreatedAtGreaterThan(
+            String name, boolean inVacations, LocalDate date, Pageable pageable);
+
+    Page<Shop> findByNameContainingIgnoreCaseAndInVacationsAndCreatedAtLessThan(
+            String name, boolean inVacations, LocalDate date, Pageable pageable);
+
+    Page<Shop> findByNameContainingIgnoreCaseAndInVacationsAndCreatedAtGreaterThanAndCreatedAtLessThan(
+            String name, boolean inVacations, LocalDate dateStart, LocalDate dateEnd, Pageable pageable);
+
+    Page<Shop> findByNameContainingIgnoreCaseAndCreatedAtGreaterThan(String name, LocalDate date, Pageable pageable);
+
+    Page<Shop> findByNameContainingIgnoreCaseAndCreatedAtLessThan(String name, LocalDate date, Pageable pageable);
+
+    Page<Shop> findByNameContainingIgnoreCaseAndCreatedAtBetween(
+            String name, LocalDate dateStart, LocalDate dateEnd, Pageable pageable);
 }

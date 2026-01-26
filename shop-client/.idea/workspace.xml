@@ -5,11 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2353da60-4fb0-4e70-9aaf-391a03e64826" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CategoryDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CategoryDetails.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ProductForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProductForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/CategoryService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/CategoryService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/formatter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/formatter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/controller/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/controller/ShopController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/controller/ShopController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/model/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/model/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/repository/ShopRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/repository/ShopRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/service/CategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/service/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/service/ShopService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +30,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="McpProjectServerCommands">
     <commands />
@@ -56,7 +65,7 @@
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "settings.sync",
     "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "C:\\Users\\muhozcla\\Documents\\fullstack\\ShopManag\\shop-client\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2025.3.1.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
