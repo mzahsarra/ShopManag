@@ -5,7 +5,7 @@ export function getCategories(page: number, size: number): Promise<ResponseArray
     return axios.get(`${import.meta.env.VITE_API}/categories?page=${page}&size=${size}`);
 }
 
-export function getCategory(id: string): Promise<AxiosResponse<Category>> {
+export function getCategory(id: number | string): Promise<AxiosResponse<Category>> {
     return axios.get(`${import.meta.env.VITE_API}/categories/${id}`);
 }
 

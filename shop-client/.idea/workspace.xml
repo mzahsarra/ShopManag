@@ -5,24 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2353da60-4fb0-4e70-9aaf-391a03e64826" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProductCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProductCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ShopCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ShopCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ShopProducts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ShopProducts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Categories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Categories.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/CategoryDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CategoryDetails.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CategoryForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CategoryForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/ProductForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProductForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Products.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Products.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ShopDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ShopDetails.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ShopForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ShopForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/CategoryService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/CategoryService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/formatter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/formatter.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,15 +43,19 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "javascript.preferred.runtime.type.id": "node",
+    "junie.onboarding.icon.badge.shown": "true",
     "last_opened_file_path": "C:/Users/muhozcla/Documents/fullstack/ShopManag/shop-client",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.sync",
+    "to.speed.mode.migration.done": "true",
     "ts.external.directory.path": "C:\\Users\\muhozcla\\Documents\\fullstack\\ShopManag\\shop-client\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }

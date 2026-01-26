@@ -16,5 +16,6 @@ export const priceFormatter = (price: number) => {
         style: 'currency',
         currency: 'EUR',
     });
-    return formatter.format(price);
+    // On divise par 100 pour transformer les centimes en euros à l'affichage
+    return formatter.format(price/100);
 };

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Box, Button, Divider, FormControl, InputAdornment, Paper, TextField, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -47,14 +46,20 @@ const ProductForm = () => {
         setLoading(true);
         ProductService.getProduct(productId)
             .then((res) => {
+                // Conversion des centimes reçus du backend en euros pour le formulaire
+                const productWithEuros = {
+                    ...res.data,
+                    price: res.data.price / 100
+                };
+
                 if (res.data.localizedProducts.length < 2) {
                     const localizedProducts = [
                         ...res.data.localizedProducts,
                         { locale: Locale.EN, name: '', description: '' },
                     ];
-                    setProduct({ ...res.data, id: id, localizedProducts });
+                    setProduct({ ...productWithEuros, id: id, localizedProducts });
                 } else {
-                    setProduct({ ...res.data, id: id });
+                    setProduct({ ...productWithEuros, id: id });
                 }
             })
             .finally(() => setLoading(false));
@@ -229,7 +234,7 @@ const ProductForm = () => {
                         required
                         type="number"
                         label="Prix"
-                        value={product.price.toString()}
+                        value={product.price .toString()}
                         onChange={(e) => setPrice(e.target.value)}
                         fullWidth
                         InputProps={{
