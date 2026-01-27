@@ -14,15 +14,14 @@ export function getShopsSorted(page: number, size: number, sort: string): Promis
 export function getShopsFiltered(page: number, size: number, urlFilters: string): Promise<ResponseArray<Shop>> {
     return axios.get(`${import.meta.env.VITE_API}/shops?page=${page}&size=${size}${urlFilters}`);
 }
+
+
 export function searchShops(page: number, size: number, q: string, filters: string = ''): Promise<ResponseArray<Shop>> {
-  return axios.get(
-    `${import.meta.env.VITE_API}/shops/search?page=${page}&size=${size}&q=${encodeURIComponent(q)}${filters}`
-  );
+    return axios.get(
+        `${import.meta.env.VITE_API}/shops?page=${page}&size=${size}&name=${encodeURIComponent(q)}${filters}`
+    );
 }
 
-/**
- * Méthode générique qui gère tous les paramètres (recherche, tri, filtres, pagination)
- */
 export function getShopsWithParams(queryString: string): Promise<ResponseArray<Shop>> {
     return axios.get(`${import.meta.env.VITE_API}/shops?${queryString}`);
 }

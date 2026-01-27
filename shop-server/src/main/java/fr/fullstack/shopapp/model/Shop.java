@@ -4,15 +4,15 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import fr.fullstack.shopapp.validation.ValidOpeningHours;
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.Formula;
 import org.hibernate.search.mapper.pojo.mapping.definition.annotation.FullTextField;
 import org.hibernate.search.mapper.pojo.mapping.definition.annotation.GenericField;
 import org.hibernate.search.mapper.pojo.mapping.definition.annotation.Indexed;
 
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,16 +21,17 @@ import java.util.List;
 @Table(name = "shops")
 @Indexed(index = "idx_shops")
 public class Shop {
-    @CreationTimestamp
-    @Column(name = "created_at", nullable = false, updatable = false)
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    @GenericField
-    private LocalDate createdAt;
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "shop_generator")
     @SequenceGenerator(name="shop_generator", sequenceName = "hibernate_sequence", allocationSize=1)
     private long id;
+
+    @CreationTimestamp
+    @Column(name = "created_at", nullable = false, updatable = false)
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    @GenericField
+    private LocalDate createdAt;
 
     @Column(nullable = false)
     @NotNull(message = "InVacations may not be null")
@@ -53,66 +54,25 @@ public class Shop {
 
     @OneToMany(cascade = {CascadeType.ALL})
     @ValidOpeningHours
-    private List<@Valid OpeningHoursShop> openingHours = new ArrayList<OpeningHoursShop>();
+    private List<@Valid OpeningHoursShop> openingHours = new ArrayList<>();
 
     @OneToMany(mappedBy = "shop", fetch = FetchType.LAZY)
     @JsonIgnore
-    private List<Product> products = new ArrayList<Product>();
+    private List<Product> products = new ArrayList<>();
+    public LocalDate getCreatedAt() { return createdAt; }
+    public long getId() { return id; }
+    public boolean getInVacations() { return inVacations; }
+    public String getName() { return name; }
+    public Long getNbProducts() { return nbProducts; }
+    public Long getNbCategories() { return nbCategories; }
+    public List<OpeningHoursShop> getOpeningHours() { return openingHours; }
+    public List<Product> getProducts() { return products; }
 
-    public LocalDate getCreatedAt() {
-        return createdAt;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public boolean getInVacations() {
-        return inVacations;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public long getNbProducts() {
-        return nbProducts;
-    }
-    public Long getNbCategories() {
-        return nbCategories;
-    }
-
-    public List<OpeningHoursShop> getOpeningHours() {
-        return openingHours;
-    }
-
-    public List<Product> getProducts() {
-        return this.products;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public void setInVacations(boolean inVacations) {
-        this.inVacations = inVacations;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setNbProducts(long nbProducts) {
-        this.nbProducts = nbProducts;
-    }
-    public void setNbCategories(Long nbCategories) {
-        this.nbCategories = nbCategories;
-    }
-    public void setOpeningHours(List<OpeningHoursShop> openingHours) {
-        this.openingHours = openingHours;
-    }
-
-    public void setProducts(List<Product> products) {
-        this.products = products;
-    }
+    public void setId(long id) { this.id = id; }
+    public void setInVacations(boolean inVacations) { this.inVacations = inVacations; }
+    public void setName(String name) { this.name = name; }
+    public void setNbProducts(Long nbProducts) { this.nbProducts = nbProducts; }
+    public void setNbCategories(Long nbCategories) { this.nbCategories = nbCategories; }
+    public void setOpeningHours(List<OpeningHoursShop> openingHours) { this.openingHours = openingHours; }
+    public void setProducts(List<Product> products) { this.products = products; }
 }
