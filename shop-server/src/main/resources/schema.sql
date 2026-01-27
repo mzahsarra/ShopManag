@@ -16,3 +16,4 @@ CREATE INDEX IF NOT EXISTS idx_products_categories_product_id ON products_catego
 CREATE INDEX IF NOT EXISTS idx_products_categories_category_id ON products_categories(category_id);;
 CREATE INDEX IF NOT EXISTS idx_shops_opening_hours_shop_id ON shops_opening_hours(shop_id);;
 CREATE INDEX IF NOT EXISTS idx_shops_opening_hours_opening_id ON shops_opening_hours(opening_hours_id);;
+CREATE INDEX IF NOT EXISTS idx_products_localized_product_product_id ON products_localized_product(product_id);;

@@ -70,15 +70,14 @@ public class ShopService {
     public Page<Shop> getShopList(
             Optional<String> sortBy,
             Optional<Boolean> inVacations,
-            Optional<String> createdBefore,
+            // CORRECTION : Inversion de createdBefore et createdAfter pour matcher le Controller
             Optional<String> createdAfter,
+            Optional<String> createdBefore,
             Optional<String> name,
             Pageable pageable
     ) {
         Optional<LocalDate> afterDate = parseDate(createdAfter);
         Optional<LocalDate> beforeDate = parseDate(createdBefore);
-
-        // Appel au repository de recherche si des filtres sont présents
         if ((name.isPresent() && !name.get().trim().isEmpty()) ||
                 inVacations.isPresent() ||
                 afterDate.isPresent() ||
@@ -89,15 +88,15 @@ public class ShopService {
                     inVacations,
                     afterDate,
                     beforeDate,
+                    sortBy,
                     pageable
             );
         }
-
-        // Sinon tri SQL standard
-        if (sortBy.isPresent()) {
+        if (sortBy.isPresent() && !sortBy.get().isEmpty()) {
             switch (sortBy.get()) {
                 case "name": return shopRepository.findByOrderByNameAsc(pageable);
                 case "createdAt": return shopRepository.findByOrderByCreatedAtAsc(pageable);
+                case "nbProducts": return shopRepository.findByOrderByNbProductsAsc(pageable);
                 default: return shopRepository.findByOrderByNbProductsAsc(pageable);
             }
         }

@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2353da60-4fb0-4e70-9aaf-391a03e64826" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/ShopService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ShopService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/controller/ShopController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/controller/ShopController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/model/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/model/Shop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/repository/ShopSearchRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/repository/ShopSearchRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/service/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/service/ShopService.java" afterDir="false" />
@@ -101,7 +99,7 @@
       <workItem from="1766318310984" duration="3384000" />
       <workItem from="1767863910713" duration="1012000" />
       <workItem from="1768211340734" duration="1829000" />
-      <workItem from="1769527872670" duration="133000" />
+      <workItem from="1769527872670" duration="1390000" />
     </task>
     <servers />
   </component>

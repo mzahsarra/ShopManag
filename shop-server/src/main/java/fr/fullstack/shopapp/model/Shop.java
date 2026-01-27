@@ -9,9 +9,11 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.Formula;
+import org.hibernate.search.engine.backend.types.Sortable;
 import org.hibernate.search.mapper.pojo.mapping.definition.annotation.FullTextField;
 import org.hibernate.search.mapper.pojo.mapping.definition.annotation.GenericField;
 import org.hibernate.search.mapper.pojo.mapping.definition.annotation.Indexed;
+import org.hibernate.search.mapper.pojo.mapping.definition.annotation.KeywordField;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -30,7 +32,7 @@ public class Shop {
     @CreationTimestamp
     @Column(name = "created_at", nullable = false, updatable = false)
     @JsonFormat(pattern = "yyyy-MM-dd")
-    @GenericField
+    @GenericField(sortable = Sortable.YES)
     private LocalDate createdAt;
 
     @Column(nullable = false)
@@ -42,9 +44,11 @@ public class Shop {
     @Size(min = 1, max = 255, message = "Name must be between 1 and 255 characters")
     @NotNull(message = "Name may not be null")
     @FullTextField
+    @KeywordField(name = "name_sort", sortable = Sortable.YES) // AJOUT : Champ dédié au tri alphabétique
     private String name;
 
     @Formula(value = "(SELECT COUNT(*) FROM products p WHERE p.shop_id = id)")
+    @GenericField(sortable = Sortable.YES) // AJOUT : Indexer le nombre de produits pour le tri
     private Long nbProducts;
 
     @Formula("(SELECT COUNT(DISTINCT pc.category_id) FROM products_categories pc " +

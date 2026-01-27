@@ -29,37 +29,32 @@ public class ShopSearchRepository {
             Optional<Boolean> inVacations,
             Optional<LocalDate> createdAfter,
             Optional<LocalDate> createdBefore,
+            Optional<String> sortBy,
             Pageable pageable
     ) {
         SearchSession searchSession = Search.session(entityManager);
 
         SearchResult<Shop> result = searchSession.search(Shop.class)
                 .where(f -> f.bool(b -> {
-                    // 1. Recherche Textuelle sur le nom
                     if (query != null && !query.trim().isEmpty()) {
-                        b.must(f.match()
-                                .field("name")
-                                .matching(query)
-                                .fuzzy(2)); // Tolérance aux fautes de frappe
+                        b.must(f.match().field("name").matching(query).fuzzy(2));
                     } else {
                         b.must(f.matchAll());
                     }
-
-                    // 2. Filtre Vacances
-                    inVacations.ifPresent(val ->
-                            b.filter(f.match().field("inVacations").matching(val))
-                    );
-
-                    // 3. Filtre Date (Après)
-                    createdAfter.ifPresent(val ->
-                            b.filter(f.range().field("createdAt").atLeast(val))
-                    );
-
-                    // 4. Filtre Date (Avant)
-                    createdBefore.ifPresent(val ->
-                            b.filter(f.range().field("createdAt").atMost(val))
-                    );
+                    inVacations.ifPresent(val -> b.filter(f.match().field("inVacations").matching(val)));
+                    createdAfter.ifPresent(val -> b.filter(f.range().field("createdAt").atLeast(val)));
+                    createdBefore.ifPresent(val -> b.filter(f.range().field("createdAt").atMost(val)));
                 }))
+                .sort(f -> {
+                    if (sortBy.isPresent()) {
+                        switch (sortBy.get()) {
+                            case "name": return f.field("name_sort").asc();
+                            case "createdAt": return f.field("createdAt").asc();
+                            case "nbProducts": return f.field("nbProducts").asc();
+                        }
+                    }
+                    return f.score();
+                })
                 .fetch((int) pageable.getOffset(), pageable.getPageSize());
 
         return new PageImpl<>(result.hits(), pageable, result.total().hitCount());
