@@ -32,38 +32,21 @@ public class ProductController {
 
 
     @PostMapping
-    public ResponseEntity<Product> createProduct(@Valid @RequestBody Product product, Errors errors) {
-        if (errors.hasErrors()) {
-            throw new ResponseStatusException(
-                    HttpStatus.BAD_REQUEST, ErrorValidation.getErrorValidationMessage(errors));
-        }
-
-        try {
-            return ResponseEntity.ok(service.createProduct(product));
-        } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
-        }
+    public ResponseEntity<Product> createProduct(@Valid @RequestBody Product product, Errors errors) throws Exception{
+        return ResponseEntity.ok(service.createProduct(product));
     }
 
 
     @DeleteMapping("/{id}")
-    public HttpStatus deleteProduct(@PathVariable long id) {
-        try {
-            service.deleteProductById(id);
-            return HttpStatus.NO_CONTENT;
-        } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
-        }
+    public HttpStatus deleteProduct(@PathVariable long id) throws Exception{
+        service.deleteProductById(id);
+        return HttpStatus.NO_CONTENT;
     }
 
 
     @GetMapping("/{id}")
-    public ResponseEntity<Product> getProductById(@PathVariable long id) {
-        try {
-            return ResponseEntity.ok().body(service.getProductById(id));
-        } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
-        }
+    public ResponseEntity<Product> getProductById(@PathVariable long id) throws Exception{
+        return ResponseEntity.ok().body(service.getProductById(id));
     }
 
 
@@ -81,16 +64,7 @@ public class ProductController {
 
 
     @PutMapping
-    public ResponseEntity<Product> updateProduct(@Valid @RequestBody Product product, Errors errors) {
-        if (errors.hasErrors()) {
-            throw new ResponseStatusException(
-                    HttpStatus.BAD_REQUEST, ErrorValidation.getErrorValidationMessage(errors));
-        }
-
-        try {
-            return ResponseEntity.ok().body(service.updateProduct(product));
-        } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
-        }
+    public ResponseEntity<Product> updateProduct(@Valid @RequestBody Product product, Errors errors) throws Exception{
+        return ResponseEntity.ok().body(service.updateProduct(product));
     }
 }

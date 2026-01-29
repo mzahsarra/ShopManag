@@ -23,26 +23,14 @@ public class ShopController {
     private ShopService service;
 
     @PostMapping
-    public ResponseEntity<Shop> createShop(@Valid @RequestBody Shop shop, Errors errors) {
-        if (errors.hasErrors()) {
-            throw new ResponseStatusException(
-                    HttpStatus.BAD_REQUEST, ErrorValidation.getErrorValidationMessage(errors));
-        }
-        try {
-            return ResponseEntity.ok(service.createShop(shop));
-        } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
-        }
+    public ResponseEntity<Shop> createShop(@Valid @RequestBody Shop shop, Errors errors) throws Exception{
+        return ResponseEntity.ok(service.createShop(shop));
     }
 
     @DeleteMapping("/{id}")
-    public HttpStatus deleteShop(@PathVariable long id) {
-        try {
-            service.deleteShopById(id);
-            return HttpStatus.NO_CONTENT;
-        } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
-        }
+    public HttpStatus deleteShop(@PathVariable long id) throws Exception{
+        return HttpStatus.NO_CONTENT;
+
     }
 
     @GetMapping
@@ -60,34 +48,18 @@ public class ShopController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Shop> getShopById(@PathVariable long id) {
-        try {
-            return ResponseEntity.ok().body(service.getShopById(id));
-        } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
-        }
+    public ResponseEntity<Shop> getShopById(@PathVariable long id) throws Exception{
+       return ResponseEntity.ok().body(service.getShopById(id));
     }
 
     @PutMapping
-    public ResponseEntity<Shop> updateShop(@Valid @RequestBody Shop shop, Errors errors) {
-        if (errors.hasErrors()) {
-            throw new ResponseStatusException(
-                    HttpStatus.BAD_REQUEST, ErrorValidation.getErrorValidationMessage(errors));
-        }
-        try {
-            return ResponseEntity.ok().body(service.updateShop(shop));
-        } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
-        }
+    public ResponseEntity<Shop> updateShop(@Valid @RequestBody Shop shop, Errors errors) throws Exception{
+        return ResponseEntity.ok().body(service.updateShop(shop));
     }
 
     @GetMapping("/elasticsearch/indexes")
     public ResponseEntity<Map<String, Object>> getElasticsearchIndexes() {
-        try {
-            Map<String, Object> indexInfo = service.getElasticsearchIndexInfo();
-            return ResponseEntity.ok(indexInfo);
-        } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage());
-        }
+        Map<String, Object> indexInfo = service.getElasticsearchIndexInfo();
+        return ResponseEntity.ok(indexInfo);
     }
 }

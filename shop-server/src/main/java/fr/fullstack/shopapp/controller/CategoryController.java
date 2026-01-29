@@ -30,62 +30,34 @@ public class CategoryController {
     private CategoryService service;
 
     @PostMapping
-    public ResponseEntity<Category> createCategory(@Valid @RequestBody Category category, Errors errors) {
-        if (errors.hasErrors()) {
-            throw new ResponseStatusException(
-                    HttpStatus.BAD_REQUEST, ErrorValidation.getErrorValidationMessage(errors));
-        }
-
-        try {
-            return ResponseEntity.ok(service.createCategory(category));
-        } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
-        }
+    public ResponseEntity<Category> createCategory(@Valid @RequestBody Category category, Errors errors) throws Exception {
+        return ResponseEntity.ok(service.createCategory(category));
     }
 
 
     @DeleteMapping("/{id}")
-    public HttpStatus deleteCategory(@PathVariable long id) {
-        try {
-            service.deleteCategoryById(id);
-            return HttpStatus.NO_CONTENT;
-        } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
-        }
+    public HttpStatus deleteCategory(@PathVariable long id) throws Exception{
+        service.deleteCategoryById(id);
+        return HttpStatus.NO_CONTENT;
     }
 
 
     @GetMapping
 
-    public ResponseEntity<Page<Category>> getAllCategories(Pageable pageable) {
+    public ResponseEntity<Page<Category>> getAllCategories(Pageable pageable)  {
         return ResponseEntity.ok(service.getCategoryList(pageable));
     }
 
 
     @GetMapping("/{id}")
-    public ResponseEntity<Category> getCategoryById(@PathVariable long id) {
-        try {
-            Category category = service.getCategoryById(id);
-            return ResponseEntity.ok().body(category);
-        } catch (EntityNotFoundException e) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Category not found");
-        } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
-        }
+    public ResponseEntity<Category> getCategoryById(@PathVariable long id) throws Exception {
+        Category category = service.getCategoryById(id);
+        return ResponseEntity.ok().body(category);
     }
 
 
     @PutMapping
-    public ResponseEntity<Category> updateCategory(@Valid @RequestBody Category category, Errors errors) {
-        if (errors.hasErrors()) {
-            throw new ResponseStatusException(
-                    HttpStatus.BAD_REQUEST, ErrorValidation.getErrorValidationMessage(errors));
-        }
-
-        try {
-            return ResponseEntity.ok().body(service.updateCategory(category));
-        } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
-        }
+    public ResponseEntity<Category> updateCategory(@Valid @RequestBody Category category, Errors errors) throws Exception{
+        return ResponseEntity.ok().body(service.updateCategory(category));
     }
 }
