@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2353da60-4fb0-4e70-9aaf-391a03e64826" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/api/axiosInstance.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/model/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/model/Shop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/repository/ShopSearchRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/repository/ShopSearchRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/service/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-server/src/main/java/fr/fullstack/shopapp/service/ShopService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/shops.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/shops.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/ToastProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/ToastProvider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/CategoryService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/CategoryService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/ProductService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ProductService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/ShopService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ShopService.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,16 +27,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "claytonmuhoza"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;claytonmuhoza&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
-    "url": "https://github.com/mzahsarra/ShopManag.git",
-    "accountId": "23268766-6327-4523-9492-bbc1b4960025"
+    "url": "git@github.com:mzahsarra/ShopManag.git",
+    "accountId": "db0874b9-183c-4897-a7a0-87ff6ba86c1f"
   }
 }]]></component>
   <component name="McpProjectServerCommands">
@@ -47,31 +51,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/muhozcla/Documents/fullstack/ShopManag/shop-client&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2025.3.1.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "javascript.preferred.runtime.type.id": "node",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/home/clayton/Documents/project/ShopManag/shop-client",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.sync",
+    "to.speed.mode.migration.done": "true",
+    "ts.external.directory.path": "/home/clayton/Documents/project/ShopManag/shop-client/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecapSpentCounter">
     <option name="endsOfQuotaMs" value="1766568629133" />
     <option name="spentUsd" value="0.26238808" />
@@ -82,7 +86,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.29346.242" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.30387.83" />
       </set>
     </attachedChunks>
   </component>
@@ -100,6 +104,7 @@
       <workItem from="1767863910713" duration="1012000" />
       <workItem from="1768211340734" duration="1829000" />
       <workItem from="1769527872670" duration="1390000" />
+      <workItem from="1769730092269" duration="731000" />
     </task>
     <servers />
   </component>
